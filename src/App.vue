@@ -1,6 +1,7 @@
 <template>
   <section>
-    <router-view class="app-main" />
+    <router-view/>
+    
   </section>
 </template>
 
@@ -14,6 +15,7 @@ const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
 
+/*
 onMounted(async () => {
   
   try {
@@ -29,5 +31,5 @@ onMounted(async () => {
   } catch (e) {
     console.log(e);
   }
-});
+}); */
 </script>
