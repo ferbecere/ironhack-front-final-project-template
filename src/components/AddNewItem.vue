@@ -1,7 +1,7 @@
 <template>
     <div>
-<input v-model="holi" class="bg"/> {{ holi }}
-<button @click="add">Añadir</button>
+<input v-model="nuevaTarea"/>
+<button @click="$emit('addToList', nuevaTarea)">Añadir</button>
 
 
     </div>
@@ -10,7 +10,7 @@
 <script setup>
 import {ref} from "vue"
 
-const holi = ref(""); 
+const nuevaTarea = ref(""); 
 
 </script>
 

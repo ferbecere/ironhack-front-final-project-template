@@ -10,7 +10,7 @@
         :checked="completado" />
         
         <label for="checkbox"> {{ itemListed }} </label>
-        <button @click="delete">Borrar</button>
+        <button @click="$emit('delete', id)">Borrar</button>
     </div>
     
     
@@ -26,8 +26,12 @@ const checked = ref(false);
 const props = defineProps ( {
     itemListed: String,
     completado: Boolean,
+    id: Number,
 });
 
+// const delete { 
+
+// }
 
 </script>
 

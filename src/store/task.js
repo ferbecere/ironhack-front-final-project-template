@@ -13,6 +13,7 @@ export const useTaskStore = defineStore("tasks", {
         .from("tasks")
         .select("*")
         .order("id", { ascending: false });
+      console.log("HE FETCHEADO TASKS" + tasks)
       this.tasks = tasks;
     },
     // Hacer POST

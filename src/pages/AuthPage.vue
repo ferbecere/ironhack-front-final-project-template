@@ -30,7 +30,7 @@ const password = ref("");
 const passwordErrorMsg = ref("Password needs numbers!");
 const showError = ref(false);
 
-watch(email, (newEmail, oldEmail) =>{ //aqui tendriamos que poner un checken vez del watch si queremos que sea al botón
+watch(email, (newEmail, oldEmail) =>{ //aqui tendriamos que poner un check en vez del watch si queremos que sea al botón
     if(newEmail.length <6){
         show.value = true;
         emailErrorMsg.value = "El email es demasiado corto";
