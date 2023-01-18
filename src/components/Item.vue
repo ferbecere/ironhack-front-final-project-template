@@ -20,6 +20,7 @@
         :id="`checkbox${id}`"
         class="bg-teal-600"
         :checked="completado"
+        @change="$emit('completed', id, $event.target.value)"
       />
       <label :for="`checkbox${id}`">
         {{ title }}

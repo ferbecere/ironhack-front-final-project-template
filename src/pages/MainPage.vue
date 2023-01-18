@@ -7,6 +7,7 @@
         :id="item.id"
         @delete="deleteItemFromList"
         @he-cambiau="itemHasChanged"
+        @completed="itemHasBeenCompleted"
       />
     </div>
 
@@ -38,7 +39,10 @@ const itemHasChanged = async (id, title) => {
   await store.editTask(id, title);
   await store.fetchTasks();
 };
-
+const itemHasBeenCompleted = async (id, completed) => {
+  await store.setTaskStatus(id, completed);
+  await store.fetchTasks();
+};
 onMounted(async () => await store.fetchTasks());
 </script>
 
