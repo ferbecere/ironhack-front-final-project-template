@@ -2,10 +2,11 @@
   <div>
     <div v-for="item in store.tasks">
       <Item
-        :itemListed="item.title"
+        :title="item.title"
         :completado="item.is_complete"
         :id="item.id"
         @delete="deleteItemFromList"
+        @he-cambiau="itemHasChanged"
       />
     </div>
 
@@ -29,8 +30,12 @@ const deleteItemFromList = async (id) => {
   await store.fetchTasks();
 };
 
-const addToTheList = async (nuevaTarea) => {
-  await store.addTask(nuevaTarea);
+const addToTheList = async (title) => {
+  await store.addTask(title);
+  await store.fetchTasks();
+};
+const itemHasChanged = async (id, title) => {
+  await store.editTask(id, title);
   await store.fetchTasks();
 };
 
