@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#app {
+    min-height: 100vh;
+    background: #FCF5E2;
+    display: flex;
+    justify-content: center;
+    
+}

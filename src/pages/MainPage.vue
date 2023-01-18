@@ -1,55 +1,40 @@
-<template>
-    <header>
-        <!--Appname PatentPending-->
-        <!-- <LogOut/> -->
-    </header>
-    <div>
-   
-    <div v-for="item in state.miLista">
-        <Item :itemListed="item.nombre" :completado="item.completado" :id="item.id" @delete="deleteItemFromList" />
+<template class="bg-amber-500">
+  <div>
+    <div v-for="item in store.tasks">
+      <Item
+        :itemListed="item.title"
+        :completado="item.is_complete"
+        :id="item.id"
+        @delete="deleteItemFromList"
+      />
     </div>
-    <AddNewItem @add-to-list="addToTheList"/>
-     
-     <!-- <AddNewItem/> -->
-    </div>
+
+    <AddNewItem @add-to-list="addToTheList" />
+  </div>
 </template>
 
 <script setup>
-  
-import Item from "../components/Item.vue"
-import AddNewItem from "../components/AddNewItem.vue"
-import {reactive} from "vue"
+import Item from "../components/Item.vue";
+import AddNewItem from "../components/AddNewItem.vue";
 import { useTaskStore } from "../store/task.js";
+import { onMounted } from "vue";
+
 const store = useTaskStore();
 // const tasks = await store.fetchTasks();
-store.fetchTasks();
-console.log("HEHE")
+
 console.log(store.tasks);
-const state = reactive ({
-    miLista:[
-{id:1, nombre:"limón",completado:true,},
-{id:2, nombre:"naranja", completado: false,},
-{id:3, nombre:"piña", completado:true,}
-]});
 
-const deleteItemFromList = (id) => {
-   const newList = state.miLista.filter(item => item.id !== id);
-   state.miLista = newList;
-} 
+const deleteItemFromList = async (id) => {
+  await store.deleteTask(id);
+  await store.fetchTasks();
+};
 
-const addToTheList = (nuevaTarea) =>{
-    const newList = state.miLista.filter(item => item);
-    newList.push({
-        nombre:nuevaTarea,
-        completado:false,
-        id:Math.random(),  
-    });
-    state.miLista = newList;
-}
+const addToTheList = async (nuevaTarea) => {
+  await store.addTask(nuevaTarea);
+  await store.fetchTasks();
+};
 
+onMounted(async () => await store.fetchTasks());
 </script>
 
-<style scoped>
-
-</style>
-
+<style scoped></style>
