@@ -1,16 +1,17 @@
 <template class="bg-amber-500 h-screen">
   <div class="space x-4">
-    <div v-for="item in store.tasks">
-      <Item
-        :title="item.title"
-        :completado="item.is_complete"
-        :id="item.id"
-        @delete="deleteItemFromList"
-        @he-cambiau="itemHasChanged"
-        @completed="itemHasBeenCompleted"
-      />
+    <div class="space x-4">
+      <div v-for="item in store.tasks">
+        <Item
+          :title="item.title"
+          :completado="item.is_complete"
+          :id="item.id"
+          @delete="deleteItemFromList"
+          @he-cambiau="itemHasChanged"
+          @completed="itemHasBeenCompleted"
+        />
+      </div>
     </div>
-
     <AddNewItem @add-to-list="addToTheList" />
   </div>
 </template>
@@ -20,6 +21,13 @@ import Item from "../components/Item.vue";
 import AddNewItem from "../components/AddNewItem.vue";
 import { useTaskStore } from "../store/task.js";
 import { onMounted } from "vue";
+
+// const tasks = []
+//tengo que cambiar la linea 4 para que coga las cosas qu estaran gaurdas en la array de tasks y llamarlol entonces.
+
+// const getAllTasks = () => {
+
+// }
 
 const store = useTaskStore();
 // const tasks = await store.fetchTasks();

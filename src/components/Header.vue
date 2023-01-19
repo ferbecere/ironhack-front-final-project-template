@@ -1,7 +1,10 @@
 <template>
-  <div>
+  <div class="flex flex-row mb-10 min-h-[15%]">
+    <img src="../assets/todo-logo.svg" class="h-20" />
     <p class="bg-teal-500">this is the header</p>
-    <button v-if="user" @click="logOut">{{ user.email }}</button>
+    <button v-if="user" @click="logOut" class="bg-red-500">
+      Do you want to log out {{ user.email }}?
+    </button>
   </div>
 </template>
 

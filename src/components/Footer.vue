@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <p class="bg-gray-500">this is the footer</p>
+  <div class="flex row-auto mt-10 min-h-[15%] min-w-full">
+    <p class="bg-gray-500 min-w-full">this is the footer</p>
   </div>
 </template>
 

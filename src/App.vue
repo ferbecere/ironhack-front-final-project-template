@@ -1,4 +1,4 @@
-<template>
+<template class="min-h-full">
   <section>
     <Header />
     <router-view />

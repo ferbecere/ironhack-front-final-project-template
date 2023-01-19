@@ -1,14 +1,18 @@
-<template>
-  <div class="flex items-center space-x-4">
+<template class="flex gap-4 m-4">
+  <div class="bg-red-100 flex items-center gap-x-4 mb-4 justify-between w-full">
     <!-- este es el main, está compuesto de una fila compuesta del botón de editar, el texto, el checkbox y el deletebutton -->
     <!-- <EditButton/>, <ItemName/>, <CheckBox/>, <DeleteButton/>; -->
 
-    <div v-if="state.editing" class="editando">
+    <div v-if="state.editing" id="editando">
       <input v-model="title" />
       <button @click="guardarCambios">Guardar</button>
     </div>
 
-    <div v-else class="noEditando">
+    <div
+      v-else
+      id="noEditando"
+      class="flex flex-row w-full items-center justify-between"
+    >
       <button
         @click="editItem"
         class="py-1 px-2 rounded-sm bg-gray-100 outline-2 outline-red-300 hover:bg-emerald-200 hover:ring-2 hover:outline-amber-300"
