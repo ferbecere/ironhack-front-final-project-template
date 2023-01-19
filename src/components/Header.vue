@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>this is the header</p>
+    <p class="bg-teal-500">this is the header</p>
     <button v-if="user" @click="logOut">{{ user.email }}</button>
   </div>
 </template>
@@ -9,11 +9,16 @@
 import { onMounted } from "vue";
 import { useUserStore } from "../store/user.js";
 import { storeToRefs } from "pinia";
+import { useRouter } from "vue-router";
 
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
+const router = useRouter();
 
-const logOut = () => userStore.logOut();
+const logOut = () => {
+  userStore.logOut();
+  router.push({ path: "/auth" });
+};
 
 onMounted(async () => {
   try {

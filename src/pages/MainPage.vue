@@ -1,5 +1,5 @@
-<template class="bg-amber-500">
-  <div>
+<template class="bg-amber-500 h-screen">
+  <div class="space x-4">
     <div v-for="item in store.tasks">
       <Item
         :title="item.title"

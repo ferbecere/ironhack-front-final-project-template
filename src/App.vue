@@ -1,27 +1,24 @@
 <template>
   <section>
-    <Header/>
-    <router-view/>
-    <Footer/>
+    <Header />
+    <router-view />
+    <Footer />
   </section>
 </template>
 
 <script setup>
-
 import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { useUserStore } from "./store/user.js";
-import Header from "./components/Header.vue"
-import Footer from "./components/Footer.vue"
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 
 const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
 
-/*
 onMounted(async () => {
-  
   try {
     await userStore.fetchUser(); // here we call fetch user
 
@@ -35,5 +32,5 @@ onMounted(async () => {
   } catch (e) {
     console.log(e);
   }
-}); */
+});
 </script>

@@ -1,13 +1,9 @@
 <template>
-    <div>
-<p>this is the footer</p>
-    </div>
+  <div>
+    <p class="bg-gray-500">this is the footer</p>
+  </div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style  scoped>
-
-</style>
+<style scoped></style>
