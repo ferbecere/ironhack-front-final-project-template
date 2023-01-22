@@ -6,7 +6,7 @@
     <div v-if="state.editing" id="editando" class="mx-2">
       <input v-model="title" />
       <button
-        class="mx-2 py-1 px-2 rounded-sm bg-white shadow"
+        class="mx-2 py-1 px-2 rounded-sm text-white bg-cyan-500 hover:bg-gray-100 hover:text-black shadow"
         @click="guardarCambios"
       >
         Guardar
@@ -29,9 +29,12 @@
         :id="`checkbox${id}`"
         class="accent-cyan-700 hover:accent-red-400 mx-2 shadow"
         :checked="completado"
-        @change="$emit('completed', id, $event.target.value)"
+        @change="$emit('completed', id, $event.target.checked)"
       />
-      <label :for="`checkbox${id}`">
+      <label v-if="!completado" :for="`checkbox${id}`">
+        {{ title }}
+      </label>
+      <label v-else :for="`checkbox${id}`" class="line-through">
         {{ title }}
       </label>
       <div class="flex justify-end shadow-lg ml-auto" id="boton-borrar">
@@ -49,7 +52,7 @@
 <script setup>
 import { ref, reactive } from "vue";
 
-const emit = defineEmits(["heCambiado"]);
+const emit = defineEmits(["heCambiado", "completed", "delete"]);
 
 const props = defineProps({
   title: String,

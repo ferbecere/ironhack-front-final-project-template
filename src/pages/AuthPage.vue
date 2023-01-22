@@ -13,7 +13,7 @@
 
       <button
         @click="registerUser"
-        class="py-1 px-2 rounded-sm bg-gray-100 outline-2 outline-red-300 hover:bg-emerald-200 ring-2 hover:ring-2 hover:outline-amber-300"
+        class="py-1 px-2 rounded-sm bg-amber-400 hover:bg-yellow-200"
       >
         Registrar
       </button>
@@ -34,7 +34,7 @@
         <div>
           <button
             @click="logInUser"
-            class="py-1 px-2 rounded-sm bg-gray-100 outline-2 outline-red-300 hover:bg-emerald-200 ring-2 hover:ring-2 hover:outline-amber-300"
+            class="py-1 px-2 rounded-sm bg-amber-400 hover:bg-yellow-200"
           >
             Log In
           </button>

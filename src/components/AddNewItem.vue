@@ -3,7 +3,7 @@
     <input class="shadow border border-cyan-700" v-model="nuevaTarea" />
     <button
       class="shadow py-1 px-2 rounded-sm bg-amber-400 hover:bg-yellow-200 font-sans"
-      @click="$emit('addToList', nuevaTarea)"
+      @click="buttonClicked"
     >
       Añadir
     </button>
@@ -13,7 +13,14 @@
 <script setup>
 import { ref } from "vue";
 
+const emit = defineEmits(["addToList"]);
+
 const nuevaTarea = ref("");
+
+const buttonClicked = () => {
+  emit("addToList", nuevaTarea.value);
+  nuevaTarea.value = "";
+};
 </script>
 
 <style scoped></style>

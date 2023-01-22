@@ -9,7 +9,7 @@
           :id="item.id"
           :key="item.id"
           @delete="deleteItemFromList"
-          @he-cambiau="itemHasChanged"
+          @he-cambiado="itemHasChanged"
           @completed="itemHasBeenCompleted"
         />
       </div>
@@ -34,8 +34,6 @@ import { storeToRefs } from "pinia";
 
 const store = useTaskStore();
 // const tasks = await store.fetchTasks();
-
-console.log(store.tasks);
 
 const { tasks } = storeToRefs(store);
 
