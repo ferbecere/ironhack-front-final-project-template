@@ -34,11 +34,10 @@
       <label :for="`checkbox${id}`">
         {{ title }}
       </label>
-      <div class="flex justify-end shadow-lg">
+      <div class="flex justify-end shadow-lg ml-auto" id="boton-borrar">
         <button
           @click="$emit('delete', id)"
           class="mr-auto mx-2 py-1 px-2 rounded-sm bg-amber-400 hover:bg-yellow-200"
-          id="boton-borrar"
         >
           Borrar
         </button>
