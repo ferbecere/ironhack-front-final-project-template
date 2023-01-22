@@ -1,8 +1,9 @@
 <template>
-  <div class="flex flex-row mb-10 min-h-[15%]">
-    <img src="../assets/todo-logo.svg" class="h-20" />
-    <p class="bg-teal-500">this is the header</p>
-    <button v-if="user" @click="logOut" class="bg-red-500">
+  <div
+    class="flex flex-row mb-10 min-h-[15%] content-center justify-between bg-yellow-200"
+  >
+    <img src="../assets/todo-logo.svg" class="mt-10 h-10 pl-5" />
+    <button v-if="user" @click="logOut" class="text-xs pr-5">
       Do you want to log out {{ user.email }}?
     </button>
   </div>

@@ -7,7 +7,9 @@
     <p>Password</p>
     <div class="space-x-5">
       <input type="password" v-model="password" />
-      <p id="error" v-if="showError">{{ passwordErrorMsg }}</p>
+      <p id="error" v-if="showError">
+        {{ passwordErrorMsg }}
+      </p>
 
       <button
         @click="registerUser"
@@ -18,7 +20,7 @@
     </div>
     <div class="flex flex-row">
       <p>Already a member?</p>
-      <p class="text-blue-700" @click="changeScreen">Log in.</p>
+      <p class="text-blue-700 hover:underline" @click="changeScreen">Log in.</p>
     </div>
   </div>
 
@@ -39,7 +41,9 @@
         </div>
       </div>
     </div>
-    <p @click="changeScreen" class="text-blue-700">Register account</p>
+    <p @click="changeScreen" class="text-blue-700 hover:underline">
+      Register account
+    </p>
   </div>
 </template>
 
@@ -104,7 +108,7 @@ watch(password, (newPassword, oldPassword) => {
   } else {
     showError.value = false;
   }
-}); //quizás es mejor hacer directamente un switch NPI - revisar.
+});
 </script>
 
 <style scoped></style>

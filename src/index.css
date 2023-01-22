@@ -3,9 +3,12 @@
 @tailwind utilities;
 
 #app {
-    min-height: 100vh;
-    background: #FCF5E2;
-    display: flex;
-    justify-content: center;
-    
+  min-height: 100vh;
+  background: #fcf5e2;
+  display: flex;
+  justify-content: center;
+}
+#boton-borrar {
+  display: flex;
+  justify-self: end;
 }

@@ -2,6 +2,7 @@
   <div class="space x-4">
     <div class="space x-4">
       <div v-for="item in store.tasks">
+        <!-- <p>Esta es tu lista de tareas:</p> -->
         <Item
           :title="item.title"
           :completado="item.is_complete"
@@ -23,7 +24,7 @@ import { useTaskStore } from "../store/task.js";
 import { onMounted } from "vue";
 
 // const tasks = []
-//tengo que cambiar la linea 4 para que coga las cosas qu estaran gaurdas en la array de tasks y llamarlol entonces.
+// ltengo que cambiar la linea 4 para que coga las cosas qu estaran gaurdas en la array de tasks y llamarlo entonces. También cambiar el for de alguna manera.
 
 // const getAllTasks = () => {
 
