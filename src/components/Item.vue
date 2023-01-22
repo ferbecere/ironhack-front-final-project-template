@@ -34,7 +34,11 @@
       <label v-if="!completado" :for="`checkbox${id}`">
         {{ title }}
       </label>
-      <label v-else :for="`checkbox${id}`" class="line-through">
+      <label
+        v-else
+        :for="`checkbox${id}`"
+        class="line-through decoration-dashed decoration-6 decoration-cyan-700"
+      >
         {{ title }}
       </label>
       <div class="flex justify-end shadow-lg ml-auto" id="boton-borrar">
