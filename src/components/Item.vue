@@ -27,7 +27,7 @@
       <input
         type="checkbox"
         :id="`checkbox${id}`"
-        class="accent-cyan-700 hover:accent-red-400 mx-2 shadow"
+        class="accent-cyan-700 hover:accent-red-400 mx-2 shadow p-2 h-5 w-5"
         :checked="completado"
         @change="$emit('completed', id, $event.target.checked)"
       />
@@ -37,7 +37,7 @@
       <label
         v-else
         :for="`checkbox${id}`"
-        class="line-through decoration-dashed decoration-6 decoration-cyan-700"
+        class="line-through decoration-dashed decoration-6 decoration-cyan-700 y"
       >
         {{ title }}
       </label>
@@ -80,4 +80,6 @@ const guardarCambios = () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+/* quiero seleccionar el input dentro del id de editando */
+</style>

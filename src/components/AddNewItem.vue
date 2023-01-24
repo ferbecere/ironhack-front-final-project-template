@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-x-2 align-middle place-content-end self-stretch">
+  <div class="flex gap-x-2 align-middle mx-2">
     <input class="shadow border border-cyan-700" v-model="nuevaTarea" />
     <button
       class="shadow py-1 px-2 rounded-sm bg-amber-400 hover:bg-yellow-200 font-sans"
@@ -23,4 +23,8 @@ const buttonClicked = () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+input {
+  width: 100%;
+}
+</style>

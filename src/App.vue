@@ -1,5 +1,5 @@
 <template class="min-h-full">
-  <section>
+  <section class="flex flex-col h-screen justify-between">
     <Header />
     <router-view />
     <Footer />
