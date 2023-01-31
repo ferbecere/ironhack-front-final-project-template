@@ -9,8 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@supabase/supabase-js": "^2",
     "pinia": "^2.0.18",
+=======
+    "@supabase/supabase-js": "^1.35.6",
+    "pinia": "^2.0.28",
+>>>>>>> c615469f6157f53e7b222b81204c2d820da0fa8d
     "pinia-plugin-persist": "^1.0.0",
     "vue": "^3.2.37",
     "vue-router": "^4.1.3"
