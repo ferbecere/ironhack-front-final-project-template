@@ -17,6 +17,7 @@ import Footer from "./components/Footer.vue";
 const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
+//const holi
 
 onMounted(async () => {
   try {
