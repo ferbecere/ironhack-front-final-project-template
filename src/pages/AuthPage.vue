@@ -1,49 +1,54 @@
 <template class="">
-  <div id="register" v-if="register">
-    <p>Register an E-mail</p>
-    <input type="email" v-model="email" />
-    <p id="error" v-if="show">{{ emailErrorMsg }}</p>
+  <div class="ml-20">
+    <!-- flex place-content:center => no consigo centrar todo el elemento -->
+    <div id="register" v-if="register">
+      <p>Register an E-mail</p>
+      <input type="email" v-model="email" />
+      <p id="error" v-if="show">{{ emailErrorMsg }}</p>
 
-    <p>Password</p>
-    <div class="space-x-5">
-      <input type="password" v-model="password" />
-      <p id="error" v-if="showError">
-        {{ passwordErrorMsg }}
-      </p>
-
-      <button
-        @click="registerUser"
-        class="py-1 px-2 rounded-sm bg-amber-400 hover:bg-yellow-200"
-      >
-        Registrar
-      </button>
-    </div>
-    <div class="flex flex-row">
-      <p>Already a member?</p>
-      <p class="text-blue-700 hover:underline" @click="changeScreen">Log in.</p>
-    </div>
-  </div>
-
-  <div id="logIn" v-else>
-    <div>
-      <p>Log in</p>
-      <input type="email" v-model="emailLogIn" />
       <p>Password</p>
-      <div class="space-x-5 flex flex-row">
-        <input type="password" v-model="passwordLogIn" />
-        <div>
-          <button
-            @click="logInUser"
-            class="py-1 px-2 rounded-sm bg-amber-400 hover:bg-yellow-200"
-          >
-            Log In
-          </button>
-        </div>
+      <div class="space-x-5">
+        <input type="password" v-model="password" />
+        <p id="error" v-if="showError">
+          {{ passwordErrorMsg }}
+        </p>
+
+        <button
+          @click="registerUser"
+          class="py-1 px-2 rounded-sm bg-amber-400 hover:bg-yellow-200"
+        >
+          Registrar
+        </button>
+      </div>
+      <div class="flex flex-row">
+        <p>Already a member?</p>
+        <p class="text-blue-700 hover:underline" @click="changeScreen">
+          Log in.
+        </p>
       </div>
     </div>
-    <p @click="changeScreen" class="text-blue-700 hover:underline">
-      Register account
-    </p>
+
+    <div id="logIn" v-else>
+      <div>
+        <p>Log in</p>
+        <input type="email" v-model="emailLogIn" />
+        <p>Password</p>
+        <div class="space-x-5 flex flex-row">
+          <input type="password" v-model="passwordLogIn" />
+          <div>
+            <button
+              @click="logInUser"
+              class="py-1 px-2 rounded-sm bg-amber-400 hover:bg-yellow-200"
+            >
+              Log In
+            </button>
+          </div>
+        </div>
+      </div>
+      <p @click="changeScreen" class="text-blue-700 hover:underline">
+        Register account
+      </p>
+    </div>
   </div>
 </template>
 
@@ -111,4 +116,9 @@ watch(password, (newPassword, oldPassword) => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+/* template {
+  display: flex;
+  justify-content: center;
+} */
+</style>

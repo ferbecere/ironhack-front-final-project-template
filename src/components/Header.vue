@@ -4,7 +4,11 @@
   >
     <!--el justify between no me chuta he tenido que poenr un gap.-->
     <img src="../assets/todo-logo.svg" class="h-10 pl-5 self-center" />
-    <button v-if="user" @click="logOut" class="text-xs pr-5">
+    <button
+      v-if="user"
+      @click="logOut"
+      class="text-xs pr-5 :red hover:text-red-600"
+    >
       cerrar sesión
     </button>
   </div>

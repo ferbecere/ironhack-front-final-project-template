@@ -1,6 +1,6 @@
 <template class="bg-amber-500 h-screen">
   <div class="space x-4">
-    <div class="space x-4">
+    <div class="space x-4 mx-10">
       <div v-for="item in tasks">
         <!-- <p>Esta es tu lista de tareas:</p> -->
         <Item
@@ -26,7 +26,7 @@ import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
 
 // const tasks = []
-// ltengo que cambiar la linea 4 para que coga las cosas qu estaran gaurdas en la array de tasks y llamarlo entonces. También cambiar el for de alguna manera.
+// ltengo que cambiar la linea 4 para que pille las cosas qu estaran gaurdas en la array de tasks y llamarlo entonces. También cambiar el for de alguna manera.
 
 // const getAllTasks = () => {
 
